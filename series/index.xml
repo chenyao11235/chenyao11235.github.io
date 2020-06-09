@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Categories on Slick</title>
-		<link>https://example.org/categories/</link>
-		<description>Recent content in Categories on Slick</description>
+		<title>Series on Slick</title>
+		<link>https://example.org/series/</link>
+		<description>Recent content in Series on Slick</description>
 		<generator>Hugo 0.73.0-DEV -- gohugo.io</generator>
 		<language>en</language>
 		<managingEditor>mail@example.org (Some Author)</managingEditor>
 		<webMaster>mail@example.org (Some Author)</webMaster>
 		<copyright>Some Author — All rights reserved.</copyright>
-		<atom:link href="https://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://example.org/series/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>
