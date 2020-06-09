@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>grpc系列-前言 - 慎始慎终，则无败事</title>
+  <title>grpc-go系列-前言 - 慎始慎终，则无败事</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,8 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="chenyao" />
-  <meta name="description" content="有一大堆任务等着处理应该怎么办？
-" />
+  <meta name="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,23 +59,23 @@
 
 
 
-<meta property="og:title" content="grpc系列-前言" />
-<meta property="og:description" content="有一大堆任务等着处理应该怎么办？" />
+<meta property="og:title" content="grpc-go系列-前言" />
+<meta property="og:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://chenyao11235.github.io/post/grpc-go-0/" />
-<meta property="article:published_time" content="2019-03-04T16:01:23+08:00" />
-<meta property="article:modified_time" content="2019-03-05T16:01:23+08:00" />
-<meta itemprop="name" content="grpc系列-前言">
-<meta itemprop="description" content="有一大堆任务等着处理应该怎么办？">
-<meta itemprop="datePublished" content="2019-03-04T16:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2019-03-05T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="60">
+<meta property="article:published_time" content="2018-03-06T16:01:23+08:00" />
+<meta property="article:modified_time" content="2018-03-07T16:01:23+08:00" />
+<meta itemprop="name" content="grpc-go系列-前言">
+<meta itemprop="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种">
+<meta itemprop="datePublished" content="2018-03-06T16:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-07T16:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="300">
 
 
 
 <meta itemprop="keywords" content="golang,grpc," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="grpc系列-前言"/>
-<meta name="twitter:description" content="有一大堆任务等着处理应该怎么办？"/>
+<meta name="twitter:title" content="grpc-go系列-前言"/>
+<meta name="twitter:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -160,10 +159,6 @@
             
               <li>
                 <a href="http://chenyao11235.github.io/post/syntax-highlighting/">Syntax Highlighting</a>
-              </li>
-            
-              <li>
-                <a href="http://chenyao11235.github.io/post/grpc-go-0/">grpc系列-前言</a>
               </li>
             
               <li>
@@ -312,7 +307,7 @@
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           <a class="menu-item-link menu-parent" href="http://chenyao11235.github.io/">docs</a>
@@ -328,10 +323,6 @@
             
               <li>
                 <a href="http://chenyao11235.github.io/post/syntax-highlighting/">Syntax Highlighting</a>
-              </li>
-            
-              <li>
-                <a href="http://chenyao11235.github.io/post/grpc-go-0/">grpc系列-前言</a>
               </li>
             
               <li>
@@ -361,16 +352,15 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">grpc系列-前言</h1>
+      <h1 class="post-title">grpc-go系列-前言</h1>
       
       <div class="post-meta">
-        <time datetime="2019-03-04" class="post-time">
-          2019-03-04
+        <time datetime="2018-03-06" class="post-time">
+          2018-03-06
         </time>
         <div class="post-category">
             <a href="http://chenyao11235.github.io/categories/golang/"> golang </a>
             <a href="http://chenyao11235.github.io/categories/grpc/"> grpc </a>
-            <a href="http://chenyao11235.github.io/categories/index/"> index </a>
             
           </div>
         
@@ -388,19 +378,24 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      <p>有一大堆任务等着处理应该怎么办？</p>
+      <p>当使用grpc进行分布式程序开发的时候应该思考哪些问题？</p>
+<ol>
+<li>grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种协议？</li>
+<li>客服端连接服务端的timeout怎么设置？连接失败的话，如何重试？重试多少次就视为失败？</li>
+<li>如果服务端有多个，客户端如何连接多个服务端？如何对服务端做负载均衡？负载均衡算法如何选择？</li>
+<li>客户端如何对服务端进行健康检查？</li>
+<li>客户端和服务端如何实现keepalive？</li>
+<li>grpc使用request-response模式来处理任务，发起请求的时候如何设置请求的超时时间？</li>
+<li>如果一次请求失败了，如何设置重试？应该重试多少次？</li>
+<li>当我们的服务因为发生异常退出的话，如何优雅地回收资源？</li>
+</ol>
 
-<h2 id="场景">场景</h2>
-
-<p><span  class="math">\[
-有一大堆任务等着处理怎么办？为了加快这些任务的处理速度，考虑使用分布式？然后呢？
-\]</span></p>
     </div>
 
     
@@ -413,14 +408,14 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2019-03-05
+      2018-03-07
       
     </span>
   </p>
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+    <span class="item-content"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
 
@@ -438,22 +433,9 @@
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/jane-theme-preview/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">Jane 主题预览</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/math-preview/">
-            <span class="next-text nav-default">Math Preview</span>
+          <a class="next" href="/post/jane-theme-preview/">
+            <span class="next-text nav-default">Jane 主题预览</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -593,33 +575,16 @@
 
 
 
-
-
-
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
-    integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
-    crossorigin="anonymous">
-
-  
-  <script defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js"
-    integrity="sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1"
-    crossorigin="anonymous"></script>
-
-  
-  <script defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-    crossorigin="anonymous" onload="renderMathInElement(document.body);">
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
   </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-        
-      });
-    });
-  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
 
 
 

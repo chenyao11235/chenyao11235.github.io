@@ -12,21 +12,21 @@
     
     
     <item>
+      <title>grpc-go系列-前言</title>
+      <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
+      <description>当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种</description>
+    </item>
+    
+    <item>
       <title>Jane 主题预览</title>
       <link>http://chenyao11235.github.io/post/jane-theme-preview/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
       <guid>http://chenyao11235.github.io/post/jane-theme-preview/</guid>
       <description>主题预览,内容有待填充。</description>
-    </item>
-    
-    <item>
-      <title>grpc系列-前言</title>
-      <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
-      
-      <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
-      <description>&lt;p&gt;有一大堆任务等着处理应该怎么办？&lt;/p&gt;</description>
     </item>
     
     <item>

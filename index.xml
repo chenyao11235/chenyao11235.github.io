@@ -12,6 +12,28 @@
     
     
     <item>
+      <title>grpc-go系列-前言</title>
+      <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
+      
+        <description>&lt;p&gt;当使用grpc进行分布式程序开发的时候应该思考哪些问题？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种协议？&lt;/li&gt;
+&lt;li&gt;客服端连接服务端的timeout怎么设置？连接失败的话，如何重试？重试多少次就视为失败？&lt;/li&gt;
+&lt;li&gt;如果服务端有多个，客户端如何连接多个服务端？如何对服务端做负载均衡？负载均衡算法如何选择？&lt;/li&gt;
+&lt;li&gt;客户端如何对服务端进行健康检查？&lt;/li&gt;
+&lt;li&gt;客户端和服务端如何实现keepalive？&lt;/li&gt;
+&lt;li&gt;grpc使用request-response模式来处理任务，发起请求的时候如何设置请求的超时时间？&lt;/li&gt;
+&lt;li&gt;如果一次请求失败了，如何设置重试？应该重试多少次？&lt;/li&gt;
+&lt;li&gt;当我们的服务因为发生异常退出的话，如何优雅地回收资源？&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Jane 主题预览</title>
       <link>http://chenyao11235.github.io/post/jane-theme-preview/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
@@ -32,23 +54,6 @@
       
         <description>&lt;p&gt;一个运维出身,会写点python,golang代码的软件工程师.&lt;/p&gt;
 </description>
-      
-    </item>
-    
-    <item>
-      <title>grpc系列-前言</title>
-      <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
-      
-      <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
-      
-        <description>&lt;p&gt;有一大堆任务等着处理应该怎么办？&lt;/p&gt;
-
-&lt;h2 id=&#34;场景&#34;&gt;场景&lt;/h2&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
-有一大堆任务等着处理怎么办？为了加快这些任务的处理速度，考虑使用分布式？然后呢？
-\]&lt;/span&gt;&lt;/p&gt;</description>
       
     </item>
     

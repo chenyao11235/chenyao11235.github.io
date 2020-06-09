@@ -6,18 +6,18 @@
     <description>Recent content in grpc on 慎始慎终，则无败事</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 04 Mar 2019 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
     
 	<atom:link href="http://chenyao11235.github.io/categories/grpc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>grpc系列-前言</title>
+      <title>grpc-go系列-前言</title>
       <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
       <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
-      <description>&lt;p&gt;有一大堆任务等着处理应该怎么办？&lt;/p&gt;</description>
+      <description>当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种</description>
     </item>
     
   </channel>
