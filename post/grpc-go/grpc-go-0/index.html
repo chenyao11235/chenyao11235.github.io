@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>404 page not found - 慎始慎终，则无败事</title>
+  <title>grpc-go系列-前言 - 慎始慎终，则无败事</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="chenyao" />
-  <meta name="description" content="Hugo theme jane example site." />
+  <meta name="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,7 +35,7 @@
 <meta name="generator" content="Hugo 0.73.0-DEV" />
 
 
-<link rel="canonical" href="http://chenyao11235.github.io/404.html" />
+<link rel="canonical" href="http://chenyao11235.github.io/post/grpc-go/grpc-go-0/" />
 
 
 
@@ -58,15 +59,23 @@
 
 
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Hugo theme jane example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://chenyao11235.github.io/404.html" />
+<meta property="og:title" content="grpc-go系列-前言" />
+<meta property="og:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://chenyao11235.github.io/post/grpc-go/grpc-go-0/" />
+<meta property="article:published_time" content="2018-03-06T16:01:23+08:00" />
+<meta property="article:modified_time" content="2018-03-07T16:01:23+08:00" />
+<meta itemprop="name" content="grpc-go系列-前言">
+<meta itemprop="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种">
+<meta itemprop="datePublished" content="2018-03-06T16:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-07T16:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="300">
 
-<meta itemprop="name" content="404 Page not found">
-<meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="Hugo theme jane example site."/>
+
+
+<meta itemprop="keywords" content="golang,grpc," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="grpc-go系列-前言"/>
+<meta name="twitter:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -283,21 +292,115 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<div class="not-found">
-  <h1 class="error-emoji"></h1>
-  <p class="error-text">/* 404 page not found. */</p>
-  <p class="error-link"><a href="/">↑ Back Home ↑</a></p>
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">grpc-go系列-前言</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-03-06" class="post-time">
+          2018-03-06
+        </time>
+        <div class="post-category">
+            <a href="http://chenyao11235.github.io/categories/golang/"> golang </a>
+            <a href="http://chenyao11235.github.io/categories/grpc/"> grpc </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
 </div>
-<script>
-  var errorEmojiContainer = document.getElementsByClassName('error-emoji')[0];
-  var emojiArray = [
-    '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
-    '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
-  ];
-  var errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
-  errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
-</script>
+
+    
+    <div class="post-content">
+      <p>当使用grpc进行分布式程序开发的时候应该思考哪些问题？</p>
+<ol>
+<li>grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种协议？</li>
+<li>客服端连接服务端的timeout怎么设置？连接失败的话，如何重试？重试多少次就视为失败？</li>
+<li>如果服务端有多个，客户端如何连接多个服务端？如何对服务端做负载均衡？负载均衡算法如何选择？</li>
+<li>客户端如何对服务端进行健康检查？</li>
+<li>客户端和服务端如何实现keepalive？</li>
+<li>grpc使用request-response模式来处理任务，发起请求的时候如何设置请求的超时时间？</li>
+<li>如果一次请求失败了，如何设置重试？应该重试多少次？</li>
+<li>当我们的服务因为发生异常退出的话，如何优雅地回收资源？</li>
+</ol>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chenyao</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2018-03-07
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://chenyao11235.github.io/tags/golang/">golang</a>
+          <a href="http://chenyao11235.github.io/tags/grpc/">grpc</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>
@@ -402,6 +505,13 @@
 
 
 
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

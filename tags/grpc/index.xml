@@ -13,10 +13,10 @@
     
     <item>
       <title>grpc-go系列-前言</title>
-      <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
+      <link>http://chenyao11235.github.io/post/grpc-go/grpc-go-0/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
+      <guid>http://chenyao11235.github.io/post/grpc-go/grpc-go-0/</guid>
       <description>当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种</description>
     </item>
     
