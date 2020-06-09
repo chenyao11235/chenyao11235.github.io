@@ -69,7 +69,7 @@
 <meta itemprop="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种">
 <meta itemprop="datePublished" content="2018-03-06T16:01:23&#43;08:00" />
 <meta itemprop="dateModified" content="2018-03-07T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="300">
+<meta itemprop="wordCount" content="452">
 
 
 
@@ -328,16 +328,22 @@
     
     <div class="post-content">
       <p>当使用grpc进行分布式程序开发的时候应该思考哪些问题？</p>
-<ol>
+<ul>
 <li>grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种协议？</li>
 <li>客服端连接服务端的timeout怎么设置？连接失败的话，如何重试？重试多少次就视为失败？</li>
 <li>如果服务端有多个，客户端如何连接多个服务端？如何对服务端做负载均衡？负载均衡算法如何选择？</li>
 <li>客户端如何对服务端进行健康检查？</li>
 <li>客户端和服务端如何实现keepalive？</li>
 <li>grpc使用request-response模式来处理任务，发起请求的时候如何设置请求的超时时间？</li>
+<li>服务端收到一个请求之后，如何检查请求参数的合法性</li>
 <li>如果一次请求失败了，如何设置重试？应该重试多少次？</li>
-<li>当我们的服务因为发生异常退出的话，如何优雅地回收资源？</li>
-</ol>
+<li>当我们的服务因为发生异常退出的话，如何优雅地回收资源？比如数据库连接？</li>
+<li>服务端如何进行服务注册？</li>
+<li>客户端如何进行服务发现？</li>
+<li>如何优雅得捕获grpc中发生的error</li>
+<li>grpc如何使用拦截器(类似gin中的middleware)，借助拦截器实现日志记录，身份验证等功能？</li>
+</ul>
+<p>将在接下来的grpc-go系列文章中解决这些问题.</p>
 
     </div>
 
