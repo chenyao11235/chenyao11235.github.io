@@ -36,6 +36,23 @@
     </item>
     
     <item>
+      <title>grpc系列-前言</title>
+      <link>http://chenyao11235.github.io/post/grpc-go-0/</link>
+      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      
+      <guid>http://chenyao11235.github.io/post/grpc-go-0/</guid>
+      
+        <description>&lt;p&gt;有一大堆任务等着处理应该怎么办？&lt;/p&gt;
+
+&lt;h2 id=&#34;场景&#34;&gt;场景&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+有一大堆任务等着处理怎么办？为了加快这些任务的处理速度，考虑使用分布式？然后呢？
+\]&lt;/span&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Math Preview</title>
       <link>http://chenyao11235.github.io/post/math-preview/</link>
       <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
