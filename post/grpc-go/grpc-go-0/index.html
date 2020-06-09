@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="chenyao" />
-  <meta name="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种" />
+  <meta name="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是server-client模式的框架，那么客户端在连接服务端的时候如何连接" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="grpc-go系列-前言" />
-<meta property="og:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种" />
+<meta property="og:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是server-client模式的框架，那么客户端在连接服务端的时候如何连接" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://chenyao11235.github.io/post/grpc-go/grpc-go-0/" />
-<meta property="article:published_time" content="2018-03-06T16:01:23+08:00" />
-<meta property="article:modified_time" content="2018-03-07T16:01:23+08:00" />
+<meta property="article:published_time" content="2020-06-06T16:01:23+08:00" />
+<meta property="article:modified_time" content="2020-06-07T16:01:23+08:00" />
 <meta itemprop="name" content="grpc-go系列-前言">
-<meta itemprop="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种">
-<meta itemprop="datePublished" content="2018-03-06T16:01:23&#43;08:00" />
-<meta itemprop="dateModified" content="2018-03-07T16:01:23&#43;08:00" />
-<meta itemprop="wordCount" content="452">
+<meta itemprop="description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是server-client模式的框架，那么客户端在连接服务端的时候如何连接">
+<meta itemprop="datePublished" content="2020-06-06T16:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-07T16:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="455">
 
 
 
 <meta itemprop="keywords" content="golang,grpc," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="grpc-go系列-前言"/>
-<meta name="twitter:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种"/>
+<meta name="twitter:description" content="当使用grpc进行分布式程序开发的时候应该思考哪些问题？ grpc是server-client模式的框架，那么客户端在连接服务端的时候如何连接"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -298,8 +298,8 @@
       <h1 class="post-title">grpc-go系列-前言</h1>
       
       <div class="post-meta">
-        <time datetime="2018-03-06" class="post-time">
-          2018-03-06
+        <time datetime="2020-06-06" class="post-time">
+          2020-06-06
         </time>
         <div class="post-category">
             <a href="http://chenyao11235.github.io/categories/golang/"> golang </a>
@@ -329,18 +329,18 @@
     <div class="post-content">
       <p>当使用grpc进行分布式程序开发的时候应该思考哪些问题？</p>
 <ul>
-<li>grpc是服务端-客户端模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种协议？</li>
-<li>客服端连接服务端的timeout怎么设置？连接失败的话，如何重试？重试多少次就视为失败？</li>
+<li>grpc是server-client模式的框架，那么客户端在连接服务端的时候如何连接，使用的哪种协议？</li>
+<li>客服端连接服务端的timeout怎么设置？连接失败的话，如何重试？重试多少次？</li>
 <li>如果服务端有多个，客户端如何连接多个服务端？如何对服务端做负载均衡？负载均衡算法如何选择？</li>
 <li>客户端如何对服务端进行健康检查？</li>
 <li>客户端和服务端如何实现keepalive？</li>
 <li>grpc使用request-response模式来处理任务，发起请求的时候如何设置请求的超时时间？</li>
-<li>服务端收到一个请求之后，如何检查请求参数的合法性</li>
-<li>如果一次请求失败了，如何设置重试？应该重试多少次？</li>
-<li>当我们的服务因为发生异常退出的话，如何优雅地回收资源？比如数据库连接？</li>
+<li>服务端收到一个请求之后，如何检查请求参数的合法性?</li>
+<li>如果一次请求失败了，如何设置重试？重试多少次？</li>
+<li>当程序发生异常退出的话，如何优雅地回收资源？比如数据库，redis的连接？</li>
 <li>服务端如何进行服务注册？</li>
 <li>客户端如何进行服务发现？</li>
-<li>如何优雅得捕获grpc中发生的error</li>
+<li>如何优雅得捕获grpc中发生的error？</li>
 <li>grpc如何使用拦截器(类似gin中的middleware)，借助拦截器实现日志记录，身份验证等功能？</li>
 </ul>
 <p>将在接下来的grpc-go系列文章中解决这些问题.</p>
@@ -357,7 +357,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2018-03-07
+      2020-06-07
       
     </span>
   </p>
